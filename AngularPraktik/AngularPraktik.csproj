@@ -22,17 +22,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\models\officeAccessoriesInterface.ts" />
-    <None Remove="ClientApp\src\app\mycomponents\officeAccessories\officeAccessories.component.html" />
-    <None Remove="ClientApp\src\app\mycomponents\officeAccessories\officeAccessories.component.ts" />
+    <None Remove="ClientApp\src\app\models\menuCafeInterface.ts" />
+    <None Remove="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.html" />
+    <None Remove="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\models\officeAccessoriesInterface.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\officeAccessories\officeAccessories.component.html">
+    <TypeScriptCompile Include="ClientApp\src\app\models\menuCafeInterface.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.html">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\officeAccessories\officeAccessories.component.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
