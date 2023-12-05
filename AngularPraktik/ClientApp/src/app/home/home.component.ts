@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IMenuCafe } from '../models/menuCafeInterface'
 import { MenuCafe as mydata } from '../data/menuCafe'
 
@@ -8,4 +8,9 @@ import { MenuCafe as mydata } from '../data/menuCafe'
 })
 export class HomeComponent {
   Dishes: IMenuCafe[] = mydata;
+  Dish:any = undefined;
+
+  ShowDish(dish: IMenuCafe): void {
+    this.Dish = dish;
+  }
 }

@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MenuCafe } from './mycomponents/menuCafe/menuCafe.component'
+import { ListCafe } from './mycomponents/listCafe/listCafe.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MenuCafe } from './mycomponents/menuCafe/menuCafe.component'
     CounterComponent,
     FetchDataComponent,
     MenuCafe,
+    ListCafe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
