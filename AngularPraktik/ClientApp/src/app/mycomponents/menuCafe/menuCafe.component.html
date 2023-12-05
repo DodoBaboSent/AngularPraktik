@@ -1,11 +1,12 @@
-<div class="container d-flex flex-row gap-4 p-2 rounded" (click)="ShowContent = !ShowContent;" [ngStyle]="{'background-color': ShowContent ? 'rgb(155 235 156)' : 'unset'}">
+<div class="container d-flex flex-row gap-4 p-2 rounded" (click)="ShowContent = !ShowContent;" [ngStyle]="{'background-color': ShowContent && Dishes.vegan ? 'rgb(155 235 156)' : '#CCC'}">
 <img [src]="Dishes.image" [alt]="Dishes.name" width="150" height="150">
-<div class="d-flex flex-column">
+<div class="d-flex flex-column gap-3">
   <span class="fs-2">{{ Dishes.name }}</span>
   <span class="fs-4"> {{ Dishes.category.section }} </span>
-  
+  <div class="d-flex flex-row gap-2" *ngIf="ShowContent">
+    <span class="fs-5" >{{ Dishes.price }} rub.</span>
+    <button>Buy</button>
+  </div>
 </div>
-<div *ngIf="ShowContent" class="d-flex flex-column py-2">
-  <span class="fs-5">{{ Dishes.price }} rub.</span>
-</div>
+
 </div>
