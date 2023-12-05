@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.menuCafeService.getAll().subscribe(Dishes => {
+    this.menuCafeService.getAllDB().subscribe(Dishes => {
       this.Dishes = Dishes
       console.log(Dishes)
       console.log(this.Dishes)
