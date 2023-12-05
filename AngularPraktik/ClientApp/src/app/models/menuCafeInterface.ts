@@ -3,8 +3,7 @@ export interface IMenuCafe{
   name: string
   vegan: boolean
   price: number
-  category: {
-    section: string
-    childrenMenu: boolean }
+  section: string
+  childrenMenu: boolean 
   image: string
 }

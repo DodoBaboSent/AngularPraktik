@@ -1,6 +1,6 @@
 import { IMenuCafe } from "../models/menuCafeInterface";
 import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Inject, Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 
 @Injectable({
@@ -8,10 +8,10 @@ import { Observable } from 'rxjs'
 })
 
 export class MenuCafeService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
 
   }
-  getAll(): Observable<IMenuCafe[]> {
-    return this.http.get<IMenuCafe[]>('http://localhost/index.json')
+  getAll(): Observable<Array<IMenuCafe>> {
+    return this.http.get<Array<IMenuCafe>>(this.baseUrl + 'MenuCafe')
   }
 }

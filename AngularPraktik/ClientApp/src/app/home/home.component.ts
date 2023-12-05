@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IMenuCafe } from '../models/menuCafeInterface';
+import { MenuCafe } from '../mycomponents/menuCafe/menuCafe.component';
 import { MenuCafeService } from '../services/menuCafe.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MenuCafeService } from '../services/menuCafe.service';
 })
 export class HomeComponent implements OnInit {
   Dish:any = undefined;
-  Dishes: IMenuCafe[] = []
+  Dishes: Array<IMenuCafe> = new Array<IMenuCafe>;
   ifReady: boolean = false;
   constructor(private menuCafeService: MenuCafeService) {
 

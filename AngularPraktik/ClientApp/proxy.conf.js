@@ -7,6 +7,7 @@ const PROXY_CONFIG = [
   {
     context: [
       "/weatherforecast",
+      "/MenuCafe",
    ],
     proxyTimeout: 10000,
     target: target,
