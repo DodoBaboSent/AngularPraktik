@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MenuCafe } from './mycomponents/menuCafe/menuCafe.component'
 import { ListCafe } from './mycomponents/listCafe/listCafe.component'
+import { ModalCafe } from './mycomponents/modalCafe/modalCafe.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ListCafe } from './mycomponents/listCafe/listCafe.component'
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       
-    ])
+    ]),
+    ModalCafe
   ],
   providers: [],
   bootstrap: [AppComponent]
