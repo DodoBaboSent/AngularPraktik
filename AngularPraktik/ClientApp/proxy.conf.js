@@ -11,7 +11,7 @@ const PROXY_CONFIG = [
       "/api/DB/GetAllDB",
    ],
     proxyTimeout: 10000,
-    target: target,
+    target: "https://localhost:7150",
     secure: false,
     headers: {
       Connection: 'Keep-Alive'

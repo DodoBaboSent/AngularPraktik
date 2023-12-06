@@ -1,14 +1,9 @@
-using AngularPraktik.Models;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
-
-var ServerVersion = new MySqlServerVersion(new Version(8, 0, 30));
-builder.Services.AddDbContext<MenuCafeDBContext>(options => options.UseMySql("server=127.0.0.1;Port=3306;user=root;password=;database=Cafe", ServerVersion));
 
 var app = builder.Build();
 

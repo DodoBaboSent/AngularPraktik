@@ -17,6 +17,9 @@ export class MenuCafeService {
   }
   // C mysql сервера, запущенном на OpenServer (версии 8.0.30)
   getAllDB(): Observable<Array<IMenuCafe>> {
-    return this.http.get<Array<IMenuCafe>>(this.baseUrl + 'api/DB/GetAllDB')
+    return this.http.get<Array<IMenuCafe>>('https://localhost:7150/api/DB/GetAllDB')
+  }
+  postDB(data: IMenuCafe[]): Observable<Array<IMenuCafe>> {
+    return this.http.post<Array<IMenuCafe>>('https://localhost:7150/api/DB/Add', data[0])
   }
 }

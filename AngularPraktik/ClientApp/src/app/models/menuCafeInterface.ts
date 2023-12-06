@@ -1,5 +1,5 @@
 export interface IMenuCafe{
-  id: number
+  id?: number
   name: string
   vegan: boolean
   price: number

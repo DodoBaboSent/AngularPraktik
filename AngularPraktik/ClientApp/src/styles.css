@@ -18,3 +18,37 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+
+.css-grid {
+  display: grid;
+  grid-template-columns: [label-start] 1fr [label-end input-start] 1fr [input-end];
+  gap: 2rem;
+}
+
+  .css-grid > label {
+    grid-column: label;
+  }
+
+  .css-grid > input {
+    grid-column: input;
+  }
+
+  .css-grid > div#check {
+    grid-column: label-start / input-end;
+    text-align: center;
+  }
+
+  .css-grid > button {
+    grid-column: label-start / input-end;
+  }
+
+  .css-grid > h1 {
+    grid-column: label-start / input-end;
+  }
+
+  .css-grid > div#err {
+    grid-column: label-start / input-end;
+    display: flex;
+    flex-direction: column;
+  }
