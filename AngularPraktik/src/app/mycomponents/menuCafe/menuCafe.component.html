@@ -1,0 +1,13 @@
+<div class="row" (click)="ShowContent = !ShowContent;" style="background-color: #f1f1f1">
+  <div class="container d-flex flex-row gap-4 p-2 rounded">
+    <img [src]="Dishes.image" [alt]="Dishes.name" width="150" height="150" *ngIf="Dishes != undefined">
+    <div class="d-flex flex-column gap-3">
+      <span class="fs-2">{{ Dishes.name }}</span>
+      <span class="fs-4"> {{ Dishes.section }} </span>
+      <div class="d-flex flex-row gap-2" *ngIf="ShowContent">
+        <span class="fs-5">{{ Dishes.price }} rub.</span>
+        <button>Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
