@@ -12,13 +12,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="7.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.12">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -437,6 +430,7 @@
     <None Remove="ClientApp\src\app\mycomponents\listCafe\listCafe.component.ts" />
     <None Remove="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.html" />
     <None Remove="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.ts" />
+    <None Remove="ClientApp\src\app\mycomponents\modalCafe\modalCafe.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -453,6 +447,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\modalCafe\modalCafe.component.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

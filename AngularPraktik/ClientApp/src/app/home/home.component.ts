@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IMenuCafe } from '../models/menuCafeInterface';
-import { MenuCafe } from '../mycomponents/menuCafe/menuCafe.component';
 import { MenuCafeService } from '../services/menuCafe.service';
 
 @Component({

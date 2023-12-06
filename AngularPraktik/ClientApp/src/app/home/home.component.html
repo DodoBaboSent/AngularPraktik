@@ -2,6 +2,9 @@
   <div class="row gap-2" *ngIf="ifReady">
     <div class="col-2 gap-2">
       <app-listCafe *ngFor="let dish of Dishes; index as i" [Dishes]="Dishes[i]" #list (DishEvent)="ShowDish($event)"></app-listCafe>
+      <div class="my-3">
+        <app-modalCafe></app-modalCafe>
+      </div>
     </div>
     <div class="col gap-2">
       <app-menuCafe [Dishes]="Dish"></app-menuCafe>

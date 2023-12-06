@@ -1,0 +1,27 @@
+<dialog #myDialog class="rounded border-primary border border-1" style="--bs-border-opacity: .5;">
+  <form method="dialog" class="css-grid" [formGroup]="ModalCafeForm" (ngSubmit)="submit();">
+    <h1 class="text-center">Новое блюдо</h1>
+    <label for="name">Название: </label><input type="text" name="name" id="name" formControlName="nameForm" />
+    <div id="err" *ngIf="ModalCafeForm.controls['nameForm'].invalid && ModalCafeForm.controls['nameForm'].touched">
+      <span class="text-danger">Не указано имя блюда</span>
+    </div>
+    <label for="price">Цена: </label><input type="number" name="price" id="price" formControlName="priceForm" />
+    <div id="err" *ngIf="ModalCafeForm.controls['priceForm'].invalid && ModalCafeForm.controls['priceForm'].touched">
+      <span class="text-danger">Ошибочная цена блюда</span>
+    </div>
+    <label for="section">Категория: </label><input type="text" name="section" id="section" formControlName="sectionForm" />
+    <div id="err" *ngIf="ModalCafeForm.controls['sectionForm'].invalid && ModalCafeForm.controls['sectionForm'].touched">
+      <span class="text-danger">Не указано категория блюда</span>
+    </div>
+    <div id="check" class="d-flex flex-row gap-4 justify-content-around">
+      <label for="vegan" id="check"><input type="checkbox" name="vegan" id="vegan" formControlName="veganForm" /> Веганское?</label>
+      <label for="child" id="check"><input type="checkbox" name="child" id="child" formControlName="childForm" /> Детское?</label>
+    </div>
+    <label for="image">Ссылка на изображение: </label><input type="text" name="image" id="image" formControlName="imageForm" />
+    <div id="err" *ngIf="ModalCafeForm.controls['imageForm'].invalid && ModalCafeForm.controls['imageForm'].touched">
+      <span class="text-danger">Не загружена фотография</span>
+    </div>
+    <button>Отправить</button>
+  </form>
+</dialog>
+<button (click)="myDialog.showModal()">Show dialog</button>
