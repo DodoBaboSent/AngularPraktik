@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -426,14 +426,20 @@
     <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\fec8aec6ac5f084e0159fa48ff86f64a2eba5cf351b73061abed2a2404703ee7.json" />
     <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ff641b90de3358eec9495a57351f26495254ccc9fcc5d7b07e6f4d07d4fd8a0d.json" />
     <None Remove="ClientApp\src\app\models\menuCafeInterface.ts" />
+    <None Remove="ClientApp\src\app\models\personClass.ts" />
     <None Remove="ClientApp\src\app\mycomponents\listCafe\listCafe.component.html" />
     <None Remove="ClientApp\src\app\mycomponents\listCafe\listCafe.component.ts" />
+    <None Remove="ClientApp\src\app\mycomponents\loginForm\loginForm.component.ts" />
     <None Remove="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.html" />
     <None Remove="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.ts" />
     <None Remove="ClientApp\src\app\mycomponents\modalCafe\modalCafe.component.ts" />
+    <None Remove="ClientApp\src\app\mycomponents\regForm\regForm.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\personClass.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\models\menuCafeInterface.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\mycomponents\listCafe\listCafe.component.html">
       <SubType>Code</SubType>
@@ -441,6 +447,10 @@
     <TypeScriptCompile Include="ClientApp\src\app\mycomponents\listCafe\listCafe.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\regForm\regForm.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\loginForm\loginForm.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\mycomponents\menuCafe\menuCafe.component.html">
       <SubType>Code</SubType>
     </TypeScriptCompile>

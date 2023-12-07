@@ -12,6 +12,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MenuCafe } from './mycomponents/menuCafe/menuCafe.component'
 import { ListCafe } from './mycomponents/listCafe/listCafe.component'
 import { ModalCafe } from './mycomponents/modalCafe/modalCafe.component'
+import { LoginForm } from './mycomponents/loginForm/loginForm.component';
+import { RegForm } from './mycomponents/regForm/regForm.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,12 @@ import { ModalCafe } from './mycomponents/modalCafe/modalCafe.component'
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'login', component: LoginForm },
+      { path: 'reg', component: RegForm },
       
     ]),
-    ModalCafe
+    ModalCafe,
+    LoginForm
   ],
   providers: [],
   bootstrap: [AppComponent]

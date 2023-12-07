@@ -1,7 +1,9 @@
 using AngularBack.Models;
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.IdentityModel.Tokens;
+using AngularBack;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +20,20 @@ builder.Services.AddCors(options =>
         policy.WithOrigins("https://localhost:44426").AllowAnyHeader().AllowAnyMethod();
     });
 });
-builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = AuthOptions.ISSUER,
+        ValidateAudience = true,
+        ValidAudience = AuthOptions.AUDIENCE,
+        ValidateLifetime = true,
+        IssuerSigningKey = AuthOptions.GetSymmetricSecurityKey(),
+        ValidateIssuerSigningKey = true,
+    };
+});
 
 //builder.Services.AddAuthorization(options =>
 //{
@@ -28,6 +43,7 @@ builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNe
 
 var ServerVersion = new MySqlServerVersion(new Version(8, 0, 30));
 builder.Services.AddDbContext<MenuCafeDBContext>(options => options.UseMySql("server=127.0.0.1;Port=3306;user=root;password=;database=Cafe", ServerVersion));
+builder.Services.AddDbContext<PersonDBContext>(options => options.UseMySql("server=127.0.0.1;Port=3306;user=root;password=;database=Cafe", ServerVersion));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,7 +55,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseRouting();
+app.UseAuthorization();
 
 app.MapControllers();
 

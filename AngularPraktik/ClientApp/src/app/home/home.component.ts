@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit {
 
   }
 
+  adminLogged: boolean = false;
+  loggedIn: boolean = sessionStorage.getItem("loggedIn") === "true" ? true : false;
+  role: string | null = sessionStorage.getItem("role");
   ngOnInit(): void {
     this.menuCafeService.getAllDB().subscribe(Dishes => {
       this.Dishes = Dishes
@@ -22,6 +25,16 @@ export class HomeComponent implements OnInit {
       this.ifReady = true;
     })
     console.log(this.Dishes)
+    if (localStorage.getItem("token") != null) {
+      this.menuCafeService.resolveToken(localStorage.getItem("token")!).subscribe(response => {
+        console.log(response)
+        sessionStorage.setItem("login", response.login)
+        sessionStorage.setItem("role", response.role)
+        console.log(this.role)
+        sessionStorage.setItem("loggedIn", "true")
+        this.adminLogged = true;
+      })
+    }
   }
 
   ShowDish(dish: IMenuCafe): void {

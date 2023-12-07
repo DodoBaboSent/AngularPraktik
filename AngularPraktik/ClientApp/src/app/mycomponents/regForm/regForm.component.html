@@ -1,0 +1,9 @@
+<form class="css-grid" [formGroup]="RegFormGroup" (ngSubmit)="submit();">
+  <h1 class="text-center">Зарегистрироваться</h1>
+  <label for="username">Логин: </label> <input type="text" name="username" id="username" formControlName="usernameForm" />
+  <label for="password">Пароль: </label> <input type="text" name="password" id="password" formControlName="passwordForm" />
+  <button type="submit" class="btn-primary rounded border-1">Зарегистрироваться</button>
+  <div class="border-1" *ngIf="errMsg!.isErr!">
+    <span class="text-danger fs-2" *ngIf="errMsg !== undefined">{{ errMsg!.msg! }}</span>
+  </div>
+</form>
