@@ -427,6 +427,8 @@
     <None Remove="ClientApp\.angular\cache\15.2.7\babel-webpack\ff641b90de3358eec9495a57351f26495254ccc9fcc5d7b07e6f4d07d4fd8a0d.json" />
     <None Remove="ClientApp\src\app\models\menuCafeInterface.ts" />
     <None Remove="ClientApp\src\app\models\personClass.ts" />
+    <None Remove="ClientApp\src\app\mycomponents\downloadDB\downloadDB.component.html" />
+    <None Remove="ClientApp\src\app\mycomponents\downloadDB\downloadDB.component.ts" />
     <None Remove="ClientApp\src\app\mycomponents\listCafe\listCafe.component.html" />
     <None Remove="ClientApp\src\app\mycomponents\listCafe\listCafe.component.ts" />
     <None Remove="ClientApp\src\app\mycomponents\loginForm\loginForm.component.ts" />
@@ -441,6 +443,12 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\models\menuCafeInterface.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\downloadDB\downloadDB.component.html">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\mycomponents\downloadDB\downloadDB.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\mycomponents\listCafe\listCafe.component.html">
       <SubType>Code</SubType>
     </TypeScriptCompile>

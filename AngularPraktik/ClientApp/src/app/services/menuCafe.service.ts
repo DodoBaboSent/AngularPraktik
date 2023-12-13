@@ -33,4 +33,8 @@ export class MenuCafeService {
     const header: HttpHeaders = new HttpHeaders({ "Accept": "application/json", "Authorization": "Bearer " + token })
     return this.http.get<{ login: string, role: string }>(`https://localhost:7150/api/account/resolveToken`, {headers : header})
   }
+  downloadDB(token: string) {
+    const header: HttpHeaders = new HttpHeaders({ "Accept": "application/json", "Authorization": "Bearer " + token })
+    return this.http.get(`https://localhost:7150/api/DB/downloaddb`, { headers: header, responseType: "blob" })
+  }
 }

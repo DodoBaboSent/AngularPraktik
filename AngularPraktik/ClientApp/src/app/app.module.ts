@@ -14,6 +14,7 @@ import { ListCafe } from './mycomponents/listCafe/listCafe.component'
 import { ModalCafe } from './mycomponents/modalCafe/modalCafe.component'
 import { LoginForm } from './mycomponents/loginForm/loginForm.component';
 import { RegForm } from './mycomponents/regForm/regForm.component';
+import { DownloadDB } from './mycomponents/downloadDB/downloadDB.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RegForm } from './mycomponents/regForm/regForm.component';
     FetchDataComponent,
     MenuCafe,
     ListCafe,
+    DownloadDB,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

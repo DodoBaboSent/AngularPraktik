@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AngularBack;
 using AngularBack.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.IO.MemoryMappedFiles;
+using System.Text;
 
 namespace AngularBack.Controllers
 {
@@ -32,7 +35,26 @@ namespace AngularBack.Controllers
           }
             return await _context.MenuCafeSet.ToListAsync();
         }
-
+        [HttpGet]
+        [Route("downloaddb")]
+        [Authorize(Roles = "admin")]
+        public FileStreamResult SendDB()
+        {
+            var DB = GetMenuCafeSet();
+            MemoryMappedFile file = MemoryMappedFile.CreateNew("db.sql", 12000);
+            MemoryMappedViewStream stream = file.CreateViewStream();
+            using (file) 
+            { 
+                    StreamWriter writer = new StreamWriter(stream, Encoding.UTF8);
+                    foreach (MenuCafe menu in DB.Result.Value)
+                    {
+                        writer.Write("Name: "+menu.name+"|"+"ID: "+menu.id+"|"+"Price: "+menu.price+"|"+"Vegan?: "+menu.vegan+"|"+"Section: "+menu.section+"|"+ "Children?: "+menu.childrenMenu+"|"+ "Image: "+menu.image+"\n");
+                    }
+                writer.Flush();
+                stream.Position = 0;
+                    return new FileStreamResult(stream, "text/plain");
+            }
+        } 
         // GET: api/MenuCafes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<MenuCafe>> GetMenuCafe(int id)
