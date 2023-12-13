@@ -1,1 +1,1 @@
-<button (click)="download()">Download DB</button>
+<button (click)="download()" *ngIf="loggedIn && role === 'admin'">Download DB</button>

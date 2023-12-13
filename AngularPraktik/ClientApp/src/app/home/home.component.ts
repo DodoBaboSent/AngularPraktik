@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  adminLogged: boolean = false;
   loggedIn: boolean = sessionStorage.getItem("loggedIn") === "true" ? true : false;
   role: string | null = sessionStorage.getItem("role");
   ngOnInit(): void {
@@ -32,7 +31,15 @@ export class HomeComponent implements OnInit {
         sessionStorage.setItem("role", response.role)
         console.log(this.role)
         sessionStorage.setItem("loggedIn", "true")
-        this.adminLogged = true;
+      }, (error) => {
+        console.log(error)
+        sessionStorage.removeItem('login')
+        sessionStorage.removeItem('role')
+        console.log(this.role)
+        sessionStorage.removeItem('loggedIn')
+        if (this.loggedIn != false) {
+          window.location.reload()
+        }
       })
     }
   }

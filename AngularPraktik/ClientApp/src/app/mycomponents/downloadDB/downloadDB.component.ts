@@ -10,6 +10,10 @@ export class DownloadDB {
   constructor(private menuCafeService: MenuCafeService) {
 
   }
+
+  loggedIn: boolean = sessionStorage.getItem("loggedIn") === "true" ? true : false
+  role: string | null = sessionStorage.getItem("role")
+
   theFile: Blob | undefined;
   download() {
     if (localStorage.getItem("token") != null) {

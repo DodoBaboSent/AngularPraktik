@@ -6,4 +6,7 @@
   <div class="border-1" *ngIf="errMsg!.isErr!">
     <span class="text-danger fs-2" *ngIf="errMsg !== undefined">{{ errMsg!.msg! }}</span>
   </div>
+  <div class="border-1" *ngIf="success">
+    <span class="text-danger fs-2">Успех! Вы можете продолжать работу</span>
+  </div>
 </form>

@@ -16,12 +16,13 @@ export class LoginForm {
   constructor(private menuCafeService: MenuCafeService, private router: Router) {
 
   }
-
+  
   LoginFormGroup = new FormGroup({
     "usernameForm": new FormControl<string>("admin", Validators.required),
     "passwordForm": new FormControl<string>("admin", Validators.required),
   })
   errMsg: { msg: string, isErr: boolean } = { msg: 'no error', isErr: false }
+  success: boolean = false;
   submit() {
     const username = this.LoginFormGroup.controls.usernameForm.value!;
     const password = this.LoginFormGroup.controls.passwordForm.value!;
@@ -34,10 +35,11 @@ export class LoginForm {
       console.log(Parsed)
       localStorage.setItem("username", Parsed.username);
       localStorage.setItem("token", Parsed.access_token);
-      this.router.navigate(['/'])
+      this.success = true;
     }, (errMsg: HttpErrorResponse) => {
       this.errMsg = { msg: errMsg.error.errorText, isErr: true }
       console.log(errMsg)
+      this.success = false;
     });
   }
 }
